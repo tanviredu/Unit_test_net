@@ -27,6 +27,63 @@ namespace MyClass.Test
 
 
 
+        /// <summary>
+        /// we automate the file creation  and delete
+        /// using function we can do it with the 
+        /// deployment attribute
+        /// </summary>
+        /// 
+
+        private const string FILE_NAME = @"FileToDeploy.txt";
+        [TestMethod]
+        [Owner("Tanvir")]
+        [DeploymentItem(FILE_NAME)]
+
+        public void FileNameDoesExistsUsingDeployment()
+        {
+            FileProcess fp = new FileProcess();
+            string fileName;
+            bool fromCall;
+            // set the directory name where you want to create
+            // with the filename
+            fileName = TestContext.DeploymentDirectory + @"\" + FILE_NAME;
+            // write the line
+            TestContext.WriteLine("Checking File : " + fileName);
+            // now create a test file with the Name
+            // "FileToDeploy.txt" 
+            // select the text file and go to propertise
+            // in vs under the file exploer
+            // and select "copy to output folder" to "copy always"
+            // then anywhere the program will run this 
+            // file will be created inside the output directory
+
+            // now check if the file exists
+            fromCall = fp.FileExists(fileName);
+            Assert.IsTrue(fromCall);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         [TestInitialize]
         public void TestInitialize()
         {
@@ -41,10 +98,7 @@ namespace MyClass.Test
 
 
 
-        /// <summary>
-        /// there is also a [Ignore()] for ignoring any test
-        /// </summary>
-
+        
 
 
         [TestMethod]
