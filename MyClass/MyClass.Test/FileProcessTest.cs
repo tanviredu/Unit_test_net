@@ -25,15 +25,6 @@ namespace MyClass.Test
             //TODO
         }
 
-
-
-        /// <summary>
-        /// we automate the file creation  and delete
-        /// using function we can do it with the 
-        /// deployment attribute
-        /// </summary>
-        /// 
-
         private const string FILE_NAME = @"FileToDeploy.txt";
         [TestMethod]
         [Owner("Tanvir")]
@@ -44,44 +35,11 @@ namespace MyClass.Test
             FileProcess fp = new FileProcess();
             string fileName;
             bool fromCall;
-            // set the directory name where you want to create
-            // with the filename
             fileName = TestContext.DeploymentDirectory + @"\" + FILE_NAME;
-            // write the line
             TestContext.WriteLine("Checking File : " + fileName);
-            // now create a test file with the Name
-            // "FileToDeploy.txt" 
-            // select the text file and go to propertise
-            // in vs under the file exploer
-            // and select "copy to output folder" to "copy always"
-            // then anywhere the program will run this 
-            // file will be created inside the output directory
-
-            // now check if the file exists
             fromCall = fp.FileExists(fileName);
             Assert.IsTrue(fromCall);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
         [TestInitialize]
@@ -128,6 +86,70 @@ namespace MyClass.Test
             Assert.IsTrue(fromCall);
             
         }
+
+
+
+
+
+
+
+
+
+
+
+        [TestMethod]
+        [Description("check if the file does exists and then send a message" +
+            "so if the assert return false it will return a message" +
+            "")]
+        [Owner("Tanvir Rahman")]
+        [Priority(1)]  //this number does not mean anything just arr a metadata so you can filter
+        [TestCategory("primary team")]
+        public void FileNameDoesExistsWithSimpleMessage()
+        {
+            FileProcess fp = new FileProcess();
+            bool fromCall;
+            SetGoodFilename();
+            TestContext.WriteLine("Creating the file " + _GoodFileName);
+            File.AppendAllText(_GoodFileName, "This is a random text");
+            TestContext.WriteLine("Testing the file " + _GoodFileName);
+            fromCall = fp.FileExists(_GoodFileName);
+            TestContext.WriteLine("Deleting the file " + _GoodFileName);
+            File.Delete(_GoodFileName);
+            Assert.IsFalse(fromCall, "File {0} Exists this will throw and assersion error",_GoodFileName);
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         [Description("setting the name")]
