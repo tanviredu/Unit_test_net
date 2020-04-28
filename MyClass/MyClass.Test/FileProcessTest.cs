@@ -14,16 +14,61 @@ namespace MyClass.Test
         public TestContext TestContext { get; set; }
 
         /// <summary>
-        ///  we make a TextContext property
-        ///  and by default what we do will be executed first
-        ///  because test will excute this property first
-        ///  and we can pass info and add console log so we can see what is
-        ///  happend in the program in the command line
+        ///  there are three initializer
+        ///  project initializer that start when the project executed
+        ///  then
+        ///  class initializer that start when the class executed
+        ///  then
+        ///  test initializer that start when the test method executed
+        /// </summary>
+
+        /// <summary>
+        ///  there are three cleanup
+        ///  project cleanup that start when the project finished (then third)
+        ///  class cleanup that start when the class finished (then second)
+        ///  test cleanup that start when the test method finished (first)
+        /// </summary>
+
+        /// <summary>
+        /// the TestContext object is passed as a parameter to Assembly(project) initializer and class initializer
         /// </summary>
 
 
+        /// class initializer is writen in side the class with method
+        /// and a testContext is passwd
+        [ClassInitialize]
+        public static void ClassInitializer(TestContext tc) {
+            tc.WriteLine("this class is initialized");
+        }
+
+        [ClassCleanup]
+
+        public static void ClassCleanup()
+        {
+            //TODO
+        }
 
 
+
+        /// <summary>
+        /// test initializer is not static because 
+        /// it needs to run before and after each test
+        /// and we dont need to pass any TestContext
+        /// because we have direct access
+        /// tou can access method name and see what method is executed
+        /// </summary>
+        
+        [TestInitialize]
+        public void TestInitialize()
+        {
+            Console.WriteLine("Currently Running Test " + TestContext.TestName);
+        }
+
+        [TestCleanup]
+        public void TestCleanup()
+        {
+            Console.WriteLine("finished test "+TestContext.TestName);
+        }
 
 
 
@@ -44,15 +89,10 @@ namespace MyClass.Test
         }
 
 
-        // make a non test function to create a good file name
-        // this method can all be addded in any test function
+        
         public void SetGoodFilename()
         {
-            // set the good file name
-            // to do that simple check the config and get the value 
-            // with the key and just replace [AppPath] with your project path
-            // and test any file in this project
-
+        
             _GoodFileName = ConfigurationManager.AppSettings["GoodFileName"];
             if (_GoodFileName.Contains("[AppPath]")) {
                 // replace the path with your path
