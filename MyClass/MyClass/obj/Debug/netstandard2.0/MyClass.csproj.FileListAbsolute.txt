@@ -1,0 +1,9 @@
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\bin\Debug\netstandard2.0\MyClass.deps.json
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\bin\Debug\netstandard2.0\MyClass.dll
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\bin\Debug\netstandard2.0\MyClass.pdb
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.csprojAssemblyReference.cache
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.csproj.CoreCompileInputs.cache
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.AssemblyInfoInputs.cache
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.AssemblyInfo.cs
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.dll
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass\obj\Debug\netstandard2.0\MyClass.pdb
