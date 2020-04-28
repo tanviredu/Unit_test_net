@@ -13,29 +13,6 @@ namespace MyClass.Test
 
         public TestContext TestContext { get; set; }
 
-        /// <summary>
-        ///  there are three initializer
-        ///  project initializer that start when the project executed
-        ///  then
-        ///  class initializer that start when the class executed
-        ///  then
-        ///  test initializer that start when the test method executed
-        /// </summary>
-
-        /// <summary>
-        ///  there are three cleanup
-        ///  project cleanup that start when the project finished (then third)
-        ///  class cleanup that start when the class finished (then second)
-        ///  test cleanup that start when the test method finished (first)
-        /// </summary>
-
-        /// <summary>
-        /// the TestContext object is passed as a parameter to Assembly(project) initializer and class initializer
-        /// </summary>
-
-
-        /// class initializer is writen in side the class with method
-        /// and a testContext is passwd
         [ClassInitialize]
         public static void ClassInitializer(TestContext tc) {
             tc.WriteLine("this class is initialized");
@@ -50,14 +27,6 @@ namespace MyClass.Test
 
 
 
-        /// <summary>
-        /// test initializer is not static because 
-        /// it needs to run before and after each test
-        /// and we dont need to pass any TestContext
-        /// because we have direct access
-        /// tou can access method name and see what method is executed
-        /// </summary>
-        
         [TestInitialize]
         public void TestInitialize()
         {
@@ -72,7 +41,25 @@ namespace MyClass.Test
 
 
 
+        /// <summary>
+        /// there is also a [Ignore()] for ignoring any test
+        /// </summary>
+
+
+
         [TestMethod]
+        [Timeout(3000)] // this method check if it finished working under 3 second 
+        public void SimulateTimeout() {
+            System.Threading.Thread.Sleep(2000);
+            // this will not show error
+        }
+
+        [TestMethod]
+
+        [Description("check if the dile does exists")]
+        [Owner("Tanvir Rahman")]
+        [Priority(1)]  //this number does not mean anything just arr a metadata so you can filter
+        [TestCategory("primary team")]
         public void FileNameDoesExists()
         {
             FileProcess fp = new FileProcess();
@@ -89,7 +76,9 @@ namespace MyClass.Test
         }
 
 
-        
+        [Description("setting the name")]
+        [Owner("Tanvir Rahman")]
+        [TestCategory("secondary team")]
         public void SetGoodFilename()
         {
         
@@ -102,6 +91,9 @@ namespace MyClass.Test
 
 
         [TestMethod]
+        [Description("check if the file does note exists")]
+        [Owner("Tanvir Rahman")]
+
         public void FileNameDoesNotExists()
         {
             //Assert.Inconclusive();
@@ -116,6 +108,9 @@ namespace MyClass.Test
         }
 
         [TestMethod]
+        [Description("check if it throws an exception")]
+        [Owner("Tanvir Rahman ornob")]
+
         public void FileNameNullOrEmpty_ThrowsArgumentNullException()
         {
             //Assert.Inconclusive();
