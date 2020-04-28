@@ -14,3 +14,4 @@ A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass.Test\obj\Debug\MyCl
 A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass.Test\obj\Debug\MyClass.Test.pdb
 A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass.Test\bin\Debug\MyClass.dll
 A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass.Test\bin\Debug\MyClass.pdb
+A:\KUDVENKAT_CSHARP_CODING\UNIT_TEST_C_SHARP\MyClass\MyClass.Test\bin\Debug\MyClass.Test.dll.config
