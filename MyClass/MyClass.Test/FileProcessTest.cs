@@ -10,22 +10,35 @@ namespace MyClass.Test
     {
         private const string BAD_FILE_NAME = @"C:\BadFileName.exe";
         private string _GoodFileName;
+
+        public TestContext TestContext { get; set; }
+
+        /// <summary>
+        ///  we make a TextContext property
+        ///  and by default what we do will be executed first
+        ///  because test will excute this property first
+        ///  and we can pass info and add console log so we can see what is
+        ///  happend in the program in the command line
+        /// </summary>
+
+
+
+
+
+
+
         [TestMethod]
         public void FileNameDoesExists()
         {
             FileProcess fp = new FileProcess();
             bool fromCall;
-            
-            // set the good file name
             SetGoodFilename();
-            // now create and add text in the file that is created
+            TestContext.WriteLine("Creating the file " +_GoodFileName);
             File.AppendAllText(_GoodFileName, "This is a random text");
-
-            //get the bool value
+            TestContext.WriteLine("Testing the file " + _GoodFileName);
             fromCall = fp.FileExists(_GoodFileName);
-            //delete the file
+            TestContext.WriteLine("Deleting the file " + _GoodFileName);
             File.Delete(_GoodFileName);
-            //assert it
             Assert.IsTrue(fromCall);
             
         }
