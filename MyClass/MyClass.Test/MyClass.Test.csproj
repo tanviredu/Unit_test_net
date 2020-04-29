@@ -55,6 +55,7 @@
     <Compile Include="FileProcessTest.cs" />
     <Compile Include="MyClassTestInitialization.cs" />
     <Compile Include="ObjectTests.cs" />
+    <Compile Include="ObjectTypeTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
