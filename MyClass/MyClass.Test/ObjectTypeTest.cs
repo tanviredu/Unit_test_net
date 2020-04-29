@@ -24,7 +24,7 @@ namespace MyClass.Test
             // so we create a super type person
 
 
-            Assert.IsInstanceOfType(per, typeof(supervisor));
+            Assert.IsInstanceOfType(per, typeof(Supervisor));
 
             
         }
@@ -42,7 +42,7 @@ namespace MyClass.Test
             // so we create a super type person
 
 
-            Assert.IsNotInstanceOfType(per, typeof(supervisor));
+            Assert.IsNotInstanceOfType(per, typeof(Supervisor));
 
 
         }

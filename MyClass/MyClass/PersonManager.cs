@@ -1,4 +1,6 @@
-﻿namespace MyClass
+﻿using System.Collections.Generic;
+
+namespace MyClass
 {
     public class PersonManager
     {
@@ -23,7 +25,7 @@
                 if (issupervisor)
                 {
                     // if supervisor then make a supervisor object
-                    ret = new supervisor();
+                    ret = new Supervisor();
                 }
                 else
                 {
@@ -38,6 +40,22 @@
             }
             return ret;
         
+        }
+
+
+        // this method return a List of all the Person object
+
+
+            // this method will return a collection of people 
+        public List<Person> GetPeople()
+        {
+            List<Person> people = new List<Person>();
+
+            people.Add(new Person() { FirstName = "tanvir", LastName = "Rahman" });
+            people.Add(new Person() { FirstName = "Zakaria", LastName = "bijoy" });
+            people.Add(new Person() { FirstName = "mridul", LastName = "hossen" });
+
+            return people;
         }
 
             

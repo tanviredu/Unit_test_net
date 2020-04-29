@@ -2,7 +2,7 @@
 
 namespace MyClass
 {
-    public class supervisor : Person { 
+    public class Supervisor : Person { 
     
         // this class has a list property
         //  that list is a number of employees
